@@ -104,4 +104,6 @@ dataFrame.to_excel(arqExcel, sheet_name=pesquisa.replace(' ','_'), index=True)
 arqExcel.save()  
 
 print('\nPrograma encerrado\n')
+
+
       
