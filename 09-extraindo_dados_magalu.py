@@ -78,7 +78,7 @@ for item in produtos:
         
     # Variável contendo cada produto
     # Será separado por "_" para facilitar na formatação do Excel
-    linha = nome_produto + '_' + preco_produto + '_' + url_produto
+    linha = nome_produto + ';' + preco_produto + ';' + url_produto
     
     # Inserindo protudo na lista
     lista_dataFrame.append(linha)
