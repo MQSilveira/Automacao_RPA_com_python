@@ -35,3 +35,4 @@ nome = nome.replace(' ', '_').lower()
 
 # Salvando o arquivo com o nome do aluno
 doc.save(f'{nome}.docx')
+
