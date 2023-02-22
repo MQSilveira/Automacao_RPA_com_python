@@ -1,11 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pandas as pd
+import pyautogui
 
-# from time import sleep
 
 # É NECESSÁRIO INSTALAR A BIBLIOTECA XlsxWriter
 #   pip install XlsxWriter
+
 
 # Seleciona o navegador (Chrome)
 chrome = webdriver.Chrome()
@@ -15,12 +16,13 @@ chrome.get('https://rpachallengeocr.azurewebsites.net/')
 
 
 # Navegador continua fechando sozinho
-# Criei um sleep para coder carregar a página e copiar a tabela
-# sleep(5)
+# Criei um sleep para poder carregar a página e copiar a tabela
+pyautogui.sleep(2)
 
 # Input solicitando para teclar qualquer tecla para prosseguir
 # O navegador é fechado em seguida
-input("\nPressione qualquer tecla para fechar o navegador\n")
+# input("\nPressione qualquer tecla para fechar o navegador\n")
+# utilizando o SLEEP, a execução entrou no FOR e o mesmo não deixou fechar
 
 
 # Variável está recebendo o XPATH da tabela
@@ -44,14 +46,7 @@ for linhaAtual in linhas:
     
     # Adicionando o objeto/texto na tabela
     lista.append(linhaAtual.text)
-    
 
-# dados_site será o nome do arquivo Excel
-# engine='xlsxwriter' - xlsxwriter é a biblioteca que quero usar
-arqExcel = pd.ExcelWriter('dados_site.xlsx', engine='xlsxwriter')
-
-# Salva/Cria o arquivo Excel
-arqExcel.save()
 
 #DATAFRAME recebe pandas.DataFrame
 # Passando a lista com as linhas
@@ -59,6 +54,8 @@ arqExcel.save()
 dataFrame = pd.DataFrame(lista, columns=['Nome_Coluna'])
 
 # Preparo o arquivo excel usando o XLSXWRITER
+# dados_site será o nome do arquivo Excel
+# engine='xlsxwriter' - xlsxwriter é a biblioteca que quero usar
 arqExcel = pd.ExcelWriter('dados_site.xlsx', engine='xlsxwriter')
 
 # Na variável dataFrame, vou passar o arquivo EXCEL que preparamos
