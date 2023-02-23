@@ -52,7 +52,7 @@ def envia_email(documento, dados_aluno):
     
     # Inserindo Mensagem ao "corpo" do email
     mensagem.attach(MIMEText(
-        f"""    Parabéns {dados_aluno['nome'].title()} mais esta conquista alcançada.\n 
+        f"""    Parabéns {dados_aluno['nome'].split()[0].title()} por mais esta conquista alcançada.\n 
         Você está recebendo o Certificado de Conclusão do curso {dados_aluno['curso']}.
         Segue em anexo seu certificado.""", 'plain'))
     
