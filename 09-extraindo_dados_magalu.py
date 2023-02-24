@@ -30,8 +30,8 @@ tempo.sleep(1)
 # Pressiona ENTER
 teclado.press('enter')
 
-# Tempo de espera após executar (15 segundos)
-tempo.sleep(15)
+# Tempo de espera após executar (20 segundos)
+tempo.sleep(20)
 
 # Variável produtos recebe elementoS (find_elements)
 # Pesquisamos por classe (CLASS_NAME), 'BCSuy' é o nome da classe encontrada no site 
@@ -87,7 +87,8 @@ for item in produtos:
 # Cria e Prepara o arquivo excel usando o XLSXWRITER
 # Irá criar um arquivo xlsx com o nome da pesquisa inserida no input
 # Será substituido os espaços ' ' por '_'
-arqExcel = pandas.ExcelWriter('magalu.xlsx', engine='xlsxwriter')
+pesquisa = pesquisa.replace(' ', '_').lower() + '.xlsx'
+arqExcel = pandas.ExcelWriter(pesquisa, engine='xlsxwriter')
 
 #DATAFRAME recebe pandas.DataFrame
 # Passando a lista com as linhas
