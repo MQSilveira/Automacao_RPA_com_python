@@ -33,10 +33,10 @@ def envia_email(documento, dados_aluno):
 
 
     # Quem envia o email
-    remetente = 'marcosilveira.lg@gmail.com'
+    remetente = 'email@gmail.com'
     
     # Senha gerada pelo Google
-    senha = 'cyznahdwxqeimfcv'
+    senha = 'senhasecreta'
 
     # Quem irá receber o email (aluno contido no arquivo Excel)
     destinatario =  dados_aluno['email']
